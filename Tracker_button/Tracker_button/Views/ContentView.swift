@@ -14,23 +14,30 @@ struct ContentView: View {
 
     var body: some View {
         VStack {
-            LocationButton(.currentLocation) {
-                // call the fce defined in vm
-                vm.showNearByMe()
-            }   .foregroundColor(.white)
-                .cornerRadius(50)
-                .labelStyle(.iconOnly)
-                .symbolVariant(.fill)
-                .tint(.pink)
-                .font(.largeTitle)
-                .padding(.bottom, 10)
+            MapView()
+//                .ignoresSafeArea(.all)
             
-            Text("Permission needed to locate you.")
-                .foregroundColor(.gray)
-                .font(.callout)
+            // Core Location Button
+            VStack {
+                LocationButton(.currentLocation) {
+                    // call the fce defined in vm
+                    vm.showNearByMe()
+                }   .foregroundColor(.white)
+                    .cornerRadius(50)
+                    .labelStyle(.iconOnly)
+                    .symbolVariant(.fill)
+                    .tint(.pink)
+                    .font(.largeTitle)
+                    .padding(.bottom, 10)
+                
+                Text("Permission needed to locate you.")
+                    .foregroundColor(.gray)
+                    .font(.callout)
+            }
+          
         }
         
-        MapView()
+       
     }
 }
 

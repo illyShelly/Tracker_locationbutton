@@ -13,6 +13,7 @@
 		37D1FF0B294681E200C9FCA3 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 37D1FF0A294681E200C9FCA3 /* Preview Assets.xcassets */; };
 		37D1FF152946830600C9FCA3 /* LocationManagerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D1FF142946830600C9FCA3 /* LocationManagerViewModel.swift */; };
 		37D1FF172946931100C9FCA3 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D1FF162946931100C9FCA3 /* MapView.swift */; };
+		37EC55B02947875C00A3CDEB /* RoutePoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37EC55AF2947875C00A3CDEB /* RoutePoint.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		37D1FF132946823800C9FCA3 /* Tracker-button-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Tracker-button-Info.plist"; sourceTree = SOURCE_ROOT; };
 		37D1FF142946830600C9FCA3 /* LocationManagerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManagerViewModel.swift; sourceTree = "<group>"; };
 		37D1FF162946931100C9FCA3 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
+		37EC55AF2947875C00A3CDEB /* RoutePoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutePoint.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +80,7 @@
 			isa = PBXGroup;
 			children = (
 				37D1FF142946830600C9FCA3 /* LocationManagerViewModel.swift */,
+				37EC55AF2947875C00A3CDEB /* RoutePoint.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -162,6 +165,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				37D1FF06294681E000C9FCA3 /* ContentView.swift in Sources */,
+				37EC55B02947875C00A3CDEB /* RoutePoint.swift in Sources */,
 				37D1FF04294681E000C9FCA3 /* Tracker_buttonApp.swift in Sources */,
 				37D1FF172946931100C9FCA3 /* MapView.swift in Sources */,
 				37D1FF152946830600C9FCA3 /* LocationManagerViewModel.swift in Sources */,
@@ -297,7 +301,9 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Tracker-button-Info.plist";
-				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "";
+				INFOPLIST_KEY_CFBundleDisplayName = "";
+				INFOPLIST_KEY_LSApplicationCategoryType = "";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "The App needs permission to provide service";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -328,7 +334,9 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Tracker-button-Info.plist";
-				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "";
+				INFOPLIST_KEY_CFBundleDisplayName = "";
+				INFOPLIST_KEY_LSApplicationCategoryType = "";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "The App needs permission to provide service";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

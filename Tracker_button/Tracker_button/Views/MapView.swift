@@ -30,11 +30,13 @@ struct MapView: View {
         let radius = max(metersInLatitude, metersInLongitude) / 2.0
         
         VStack {
-            Text("\(manager.region.center.latitude)")
-            Text("\(manager.region.center.longitude)")
-            Text("\(metersInLatitude)")
-            Text("\(metersInLatitude)")
-            Text("\(radius)")
+//            Text("\(manager.lastLocation?.coordinate.latitude)")
+
+            Text("Lat: \(manager.region.center.latitude)")
+            Text("Lon: \(manager.region.center.longitude)")
+            Text("m-Lat:\(metersInLatitude)")
+            Text("m-Lot:\(metersInLongitude)")
+            Text("Radious: \(radius)")
             // without double "" -> err: No exact matches in call to initializer
             
             // MapInteractionModes - .pan or .zoom or allow both .all
