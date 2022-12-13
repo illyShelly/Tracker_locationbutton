@@ -23,9 +23,10 @@ struct ContentView: View {
                         // add user with ....
                     }, label: {
                         Image(systemName: "plus")
-                            .foregroundColor(Color.red)
-                            .padding(5.0)
-                            .background(Color.white)
+                            .foregroundColor(Color.white)
+                            .padding(10.0)
+                            .background(Color.red)
+                            .clipShape(/*@START_MENU_TOKEN@*/Circle()/*@END_MENU_TOKEN@*/)
                                 
                     })
                 }
