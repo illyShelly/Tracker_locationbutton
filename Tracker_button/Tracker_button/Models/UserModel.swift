@@ -10,7 +10,7 @@ import MapKit
 // import SwiftUI
 
 struct User: Identifiable {
-    let id: UUID
+    var id = UUID()
     let userLat: Double
     let userLon: Double
     
