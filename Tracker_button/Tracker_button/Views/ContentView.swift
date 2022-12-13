@@ -13,34 +13,34 @@ struct ContentView: View {
     @EnvironmentObject private var vm: LocationManagerViewModel
     
     var body: some View {
-        VStack {
+        NavigationView {
             MapView()
             //             .ignoresSafeArea(.all)
-        }
         
-        .toolbar {
-            ToolbarItem(placement: .navigationBarTrailing) {
-                Button(action: {
-                    // add user with ....
-                }, label: {
-                    Image(systemName: "plus")
-                })
-            }
-            ToolbarItem(placement: .bottomBar) {
-            // Show LocationButton to get its one-time permision of location confirmation - then it's done
-                if (vm.lastLocation == nil) {
-                    LocationButton(.currentLocation) {
-                        // call the fce defined in vm
-                        vm.showNearByMe()
-                    }.foregroundColor(.white)
-                        .cornerRadius(50)
-                        .labelStyle(.titleAndIcon)
-                        .symbolVariant(.fill)
-                        .tint(.pink)
-                        .padding(.top, 10)
+            .toolbar {
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    Button(action: {
+                        // add user with ....
+                    }, label: {
+                        Image(systemName: "plus")
+                    })
                 }
-            }
-        }// toolbar
+                ToolbarItem(placement: .bottomBar) {
+                // Show LocationButton to get its one-time permision of location confirmation - then it's done
+                    if (vm.lastLocation == nil) {
+                        LocationButton(.currentLocation) {
+                            // call the fce defined in vm
+                            vm.showNearByMe()
+                        }.foregroundColor(.white)
+                            .cornerRadius(50)
+                            .labelStyle(.titleAndIcon)
+                            .symbolVariant(.fill)
+                            .tint(.pink)
+                            .padding(.top, 10)
+                    }
+                }
+            }// toolbar
+        }
     }
 }
 struct ContentView_Previews: PreviewProvider {
