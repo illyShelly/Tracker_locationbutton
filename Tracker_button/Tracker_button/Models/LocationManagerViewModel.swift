@@ -31,12 +31,12 @@ class LocationManagerViewModel: NSObject, ObservableObject {
         locationManager.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyBest // a lot of pre-made values
         locationManager.distanceFilter = self.CLLocationDistanceMax
-          locationManager.startUpdatingLocation()     // The CLLocationButton handles permission now
+//          locationManager.startUpdatingLocation()     // The CLLocationButton handles permission now
     }
     
 // Apple fce - Location Button to start updating location, once authorized we can begin to track the user - pop-up
     @objc func showNearByMe() {
-        // self.locationManager.requestWhenInUseAuthorization() // CLButton - ask now for one-time permission on our behalf
+//         self.locationManager.requestWhenInUseAuthorization() // CLButton - ask now for one-time permission on our behalf
         self.locationManager.startUpdatingLocation()
     }
     
@@ -70,10 +70,9 @@ class LocationManagerViewModel: NSObject, ObservableObject {
 
 extension LocationManagerViewModel: CLLocationManagerDelegate {
     
-//Replaced by integrated CLLocationButton
-    //    func requestPermission() {
-    //        locationManager.requestWhenInUseAuthorization() // no need for LocationButton anymore!!!
-    //    }
+//    func requestPermission() {
+//        locationManager.requestWhenInUseAuthorization() // no need for LocationButton anymore!!!
+//    }
     
     func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {
         self.status = manager.authorizationStatus
@@ -86,9 +85,7 @@ extension LocationManagerViewModel: CLLocationManagerDelegate {
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         guard let location = locations.last else { return } // access to the last location
-        DispatchQueue.main.async {
             self.lastLocation = location
-        }
         let center = CLLocationCoordinate2D(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude )
         region = MKCoordinateRegion(center: center, span: MKCoordinateSpan(latitudeDelta: 0.003, longitudeDelta: 0.003)
         )
