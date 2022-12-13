@@ -15,6 +15,7 @@
 		37D1FF172946931100C9FCA3 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D1FF162946931100C9FCA3 /* MapView.swift */; };
 		37EC55B02947875C00A3CDEB /* RoutePoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37EC55AF2947875C00A3CDEB /* RoutePoint.swift */; };
 		37EC55B32947E8D300A3CDEB /* MKCoordinateRegion+Extentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37EC55B22947E8D300A3CDEB /* MKCoordinateRegion+Extentions.swift */; };
+		E760B2A829491E3D00643386 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E760B2A729491E3D00643386 /* UserModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		37D1FF162946931100C9FCA3 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		37EC55AF2947875C00A3CDEB /* RoutePoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutePoint.swift; sourceTree = "<group>"; };
 		37EC55B22947E8D300A3CDEB /* MKCoordinateRegion+Extentions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MKCoordinateRegion+Extentions.swift"; sourceTree = "<group>"; };
+		E760B2A729491E3D00643386 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +86,7 @@
 			children = (
 				37D1FF142946830600C9FCA3 /* LocationManagerViewModel.swift */,
 				37EC55AF2947875C00A3CDEB /* RoutePoint.swift */,
+				E760B2A729491E3D00643386 /* UserModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -176,6 +179,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				37D1FF06294681E000C9FCA3 /* ContentView.swift in Sources */,
+				E760B2A829491E3D00643386 /* UserModel.swift in Sources */,
 				37EC55B02947875C00A3CDEB /* RoutePoint.swift in Sources */,
 				37D1FF04294681E000C9FCA3 /* Tracker_buttonApp.swift in Sources */,
 				37D1FF172946931100C9FCA3 /* MapView.swift in Sources */,
@@ -321,6 +325,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -354,6 +359,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
