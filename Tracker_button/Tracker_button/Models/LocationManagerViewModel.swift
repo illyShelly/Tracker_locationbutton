@@ -14,25 +14,24 @@ class LocationManagerViewModel: NSObject, ObservableObject {
     @Published var lastLocation: CLLocation?    // CLLocation vs CLLocationCoordinate2D
     
     @Published var region = MKCoordinateRegion( // instantiate with default location when permission denied
-        center: CLLocationCoordinate2D(latitude: 38.8981, longitude: -77.0343),
+        center: CLLocationCoordinate2D(latitude: 51.505554, longitude: -0.075278), // White House US -> 38.8981, -77.0343
         span: MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01)
-    ) // create a @Published variable of type MKCoordinateRegion, this will be our Binding variable that will observe for changes in the user’s location
+    )
     
     //var distanceFilter: CLLocationDistance = 20.0 // min distance to move horizontally
     let CLLocationDistanceMax: CLLocationDistance = 5.0 // A distance in meters from an existing location.
     
-    // Instantiate var of type CLLocationManager,
     // Will set up and handle what we need in order to get the user’s coordinates.
-    private let locationManager = CLLocationManager()
+    private let locationManager = CLLocationManager() // Instantiate var of type CLLocationManager,
     
     // Override the init of the class. We will call our CLLocationManager variable and set the .delegate to self.
     override init() {
         status = locationManager.authorizationStatus // need to be initialized before super.init() class
         super.init()
         locationManager.delegate = self
-        locationManager.desiredAccuracy = kCLLocationAccuracyBest //kCLLocationAccuracyNearestTenMeters // a lot of pre-made values
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest // a lot of pre-made values
         locationManager.distanceFilter = self.CLLocationDistanceMax
-        //  locationManager.startUpdatingLocation() // The CLLocationButton handles permission now
+          locationManager.startUpdatingLocation()     // The CLLocationButton handles permission now
     }
     
 // Apple fce - Location Button to start updating location, once authorized we can begin to track the user - pop-up
@@ -46,13 +45,14 @@ class LocationManagerViewModel: NSObject, ObservableObject {
         switch status {
             case .authorizedWhenInUse:
                 // The best option - map display
+                self.locationManager.startUpdatingLocation()
                 break
             case .denied:
                 // We cannot pop-up another permission -> instruct user go to General Settings
                 break
             case .notDetermined:
                 // User haven't click anything yes/no
-            locationManager.requestWhenInUseAuthorization()
+                self.locationManager.requestWhenInUseAuthorization()
                 break
             case .restricted:
                 // User cannot change status -> e.x.: Parental control
@@ -69,6 +69,11 @@ class LocationManagerViewModel: NSObject, ObservableObject {
 
 
 extension LocationManagerViewModel: CLLocationManagerDelegate {
+    
+//Replaced by integrated CLLocationButton
+    //    func requestPermission() {
+    //        locationManager.requestWhenInUseAuthorization() // no need for LocationButton anymore!!!
+    //    }
     
     func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {
         self.status = manager.authorizationStatus
@@ -97,6 +102,8 @@ extension LocationManagerViewModel: CLLocationManagerDelegate {
 //The minimum distance in meters the device must move horizontally before an update event is generated.
 //let CLLocationDistanceMax: CLLocationDistance
 //A constant indicating the maximum distance.
+
+// create a @Published variable of type MKCoordinateRegion, this will be our Binding variable that will observe for changes in the user’s location
 
 //Publishing changes from within view updates is not allowed, this will cause undefined behavior.
 //Explanation: https://www.youtube.com/watch?v=3a7tuhVpoTQ

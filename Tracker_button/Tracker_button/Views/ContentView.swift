@@ -15,28 +15,9 @@ struct ContentView: View {
     var body: some View {
         VStack {
             MapView()
-             .ignoresSafeArea(.all)
-            
-            // Core Location Button
-//            VStack {
-//                LocationButton(.currentLocation) {
-//                    // call the fce defined in vm
-//                    vm.showNearByMe()
-//                }
-//                .foregroundColor(.white)
-//                .cornerRadius(50)
-//                .labelStyle(.titleAndIcon)
-//                .symbolVariant(.fill)
-//                .tint(.pink)
-////              .font(.title)
-////              .padding(.bottom, 10)//                .padding(.top, 700) // ZStack
-//
-//
-////                Text("Permission needed to locate you.")
-////                    .foregroundColor(.gray)
-////                    .font(.callout)
-//            }
+            //             .ignoresSafeArea(.all)
         }
+        
         .toolbar {
             ToolbarItem(placement: .navigationBarTrailing) {
                 Button(action: {
@@ -46,25 +27,22 @@ struct ContentView: View {
                 })
             }
             ToolbarItem(placement: .bottomBar) {
-// Show LocationButton to get its one-time permision of location confirmation - then it's done
+            // Show LocationButton to get its one-time permision of location confirmation - then it's done
                 if (vm.lastLocation == nil) {
                     LocationButton(.currentLocation) {
-                            // call the fce defined in vm
-                            vm.showNearByMe()
-                        }.foregroundColor(.white)
+                        // call the fce defined in vm
+                        vm.showNearByMe()
+                    }.foregroundColor(.white)
                         .cornerRadius(50)
                         .labelStyle(.titleAndIcon)
                         .symbolVariant(.fill)
                         .tint(.pink)
                         .padding(.top, 10)
                 }
-              
-                    
             }
-        }
+        }// toolbar
     }
 }
-
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
