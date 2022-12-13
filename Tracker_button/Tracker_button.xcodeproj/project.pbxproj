@@ -14,6 +14,7 @@
 		37D1FF152946830600C9FCA3 /* LocationManagerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D1FF142946830600C9FCA3 /* LocationManagerViewModel.swift */; };
 		37D1FF172946931100C9FCA3 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D1FF162946931100C9FCA3 /* MapView.swift */; };
 		37EC55B02947875C00A3CDEB /* RoutePoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37EC55AF2947875C00A3CDEB /* RoutePoint.swift */; };
+		37EC55B32947E8D300A3CDEB /* MKCoordinateRegion+Extentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37EC55B22947E8D300A3CDEB /* MKCoordinateRegion+Extentions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		37D1FF142946830600C9FCA3 /* LocationManagerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManagerViewModel.swift; sourceTree = "<group>"; };
 		37D1FF162946931100C9FCA3 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		37EC55AF2947875C00A3CDEB /* RoutePoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutePoint.swift; sourceTree = "<group>"; };
+		37EC55B22947E8D300A3CDEB /* MKCoordinateRegion+Extentions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MKCoordinateRegion+Extentions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +62,7 @@
 			children = (
 				37D1FF132946823800C9FCA3 /* Tracker-button-Info.plist */,
 				37D1FF03294681E000C9FCA3 /* Tracker_buttonApp.swift */,
+				37EC55B12947E8A000A3CDEB /* Extentions */,
 				37D1FF112946822200C9FCA3 /* Models */,
 				37D1FF122946822B00C9FCA3 /* Views */,
 				37D1FF07294681E200C9FCA3 /* Assets.xcassets */,
@@ -92,6 +95,14 @@
 				37D1FF162946931100C9FCA3 /* MapView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		37EC55B12947E8A000A3CDEB /* Extentions */ = {
+			isa = PBXGroup;
+			children = (
+				37EC55B22947E8D300A3CDEB /* MKCoordinateRegion+Extentions.swift */,
+			);
+			path = Extentions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -168,6 +179,7 @@
 				37EC55B02947875C00A3CDEB /* RoutePoint.swift in Sources */,
 				37D1FF04294681E000C9FCA3 /* Tracker_buttonApp.swift in Sources */,
 				37D1FF172946931100C9FCA3 /* MapView.swift in Sources */,
+				37EC55B32947E8D300A3CDEB /* MKCoordinateRegion+Extentions.swift in Sources */,
 				37D1FF152946830600C9FCA3 /* LocationManagerViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -7,33 +7,38 @@
 
 import Foundation
 import CoreLocation
-import SwiftUI
 import MapKit
 
-class LocationManagerViewModel: NSObject, ObservableObject, CLLocationManagerDelegate {
+class LocationManagerViewModel: NSObject, ObservableObject {
     @Published var status: CLAuthorizationStatus
     @Published var lastLocation: CLLocation?    // CLLocation vs CLLocationCoordinate2D
     
-    @Published var region = MKCoordinateRegion() // create a @Published variable of type MKCoordinateRegion, this will be our Binding variable that will observe for changes in the user’s location
-
+    @Published var region = MKCoordinateRegion( // instantiate with default location when permission denied
+        center: CLLocationCoordinate2D(latitude: 38.8981, longitude: -77.0343),
+        span: MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01)
+    ) // create a @Published variable of type MKCoordinateRegion, this will be our Binding variable that will observe for changes in the user’s location
+    
     //var distanceFilter: CLLocationDistance = 20.0 // min distance to move horizontally
     let CLLocationDistanceMax: CLLocationDistance = 5.0 // A distance in meters from an existing location.
     
-// create a var of type CLLocationManager, init, will set up and handle what we need in order to get the user’s coordinates.
+    // Instantiate var of type CLLocationManager,
+    // Will set up and handle what we need in order to get the user’s coordinates.
     private let locationManager = CLLocationManager()
     
-// override the init of the class. We will call our CLLocationManager variable and set the .delegate to self.
+    // Override the init of the class. We will call our CLLocationManager variable and set the .delegate to self.
     override init() {
-        status = locationManager.authorizationStatus
+        status = locationManager.authorizationStatus // need to be initialized before super.init() class
         super.init()
         locationManager.delegate = self
-        locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters // a lot of pre-made values
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest //kCLLocationAccuracyNearestTenMeters // a lot of pre-made values
         locationManager.distanceFilter = self.CLLocationDistanceMax
-//        locationManager.startUpdatingLocation()
+        //  locationManager.startUpdatingLocation() // The CLLocationButton handles permission now
     }
-   
-    func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {
-        self.status = manager.authorizationStatus
+    
+// Apple fce - Location Button to start updating location, once authorized we can begin to track the user - pop-up
+    @objc func showNearByMe() {
+        // self.locationManager.requestWhenInUseAuthorization() // CLButton - ask now for one-time permission on our behalf
+        self.locationManager.startUpdatingLocation()
     }
     
     func checkLocationAuthorization() { // updates our @Published above -'listening to change' in the View
@@ -60,21 +65,33 @@ class LocationManagerViewModel: NSObject, ObservableObject, CLLocationManagerDel
         }
     }
     
-// In this fce - we will track the users location, we will set our MKCoordinateRegion.
-// Tells the delegate that new location data is available.
-    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        guard let location = locations.last else { return } // access to the last location
-        self.lastLocation = location
-        let center = CLLocationCoordinate2D(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude )
-        region = MKCoordinateRegion(center: center, span: MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01)) // already initialized above
+}
+
+
+extension LocationManagerViewModel: CLLocationManagerDelegate {
+    
+    func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {
+        self.status = manager.authorizationStatus
     }
     
-// Apple fce - Location Button to start updating location, once authorized we can begin to track the user - pop-up
-    @objc func showNearByMe() {
-        // self.locationManager.requestWhenInUseAuthorization() // CLLocationButton - ask for one-time permission on our behalf when the button is tapped
-        self.locationManager.startUpdatingLocation()
+    // DidUpdateLocation -> is one of the Delegete event - > that's why locationManager needs to set delegate -> to self
+    // In this fce - we will receive/track the users location as an 'array' & 'update' our Published proverty above
+    // Tells the delegate that new location data is available.
+    // We will set up our MKCoordinateRegion & Coordinates
+    
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        guard let location = locations.last else { return } // access to the last location
+        DispatchQueue.main.async {
+            self.lastLocation = location
+        }
+        let center = CLLocationCoordinate2D(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude )
+        region = MKCoordinateRegion(center: center, span: MKCoordinateSpan(latitudeDelta: 0.003, longitudeDelta: 0.003)
+        )
     }
+    
+    
 }
+
 
 //var distanceFilter: CLLocationDistance
 //The minimum distance in meters the device must move horizontally before an update event is generated.
@@ -89,9 +106,4 @@ class LocationManagerViewModel: NSObject, ObservableObject, CLLocationManagerDel
 // Since we added 'the CLLocationManagerDelegate' to our class above -> it will require the following function:
     // manager -> the object that you use to start & stop the delivery of location-related events to your app
     // locations -> the lat, long, and course information reported by the system
-    
 
-//    @Published var region = MKCoordinateRegion(
-//        center: CLLocationCoordinate2D(latitude: 38.898150, longitude: -77.034340),
-//        span: MKCoordinateSpan(latitudeDelta: 1, longitudeDelta: 1)
-//    )
