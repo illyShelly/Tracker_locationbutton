@@ -27,7 +27,7 @@ struct ContentView: View {
                         Image(systemName: "plus")
                             .foregroundColor(.white)
                             .padding(10.0)
-                            .background(Color("AppColor"))
+                            .background(.pink)
                             .clipShape(/*@START_MENU_TOKEN@*/Circle()/*@END_MENU_TOKEN@*/)
                                 
                     })
@@ -42,10 +42,10 @@ struct ContentView: View {
                             .cornerRadius(50)
                             .labelStyle(.titleAndIcon)
                             .symbolVariant(.fill)
-                            .tint(Color("AppColor"))
+                            .tint(.pink)
                             .padding(.top, 10)
                     }
-                }
+                } 
             }// toolbar
         }
         .sheet(isPresented: $showModal){

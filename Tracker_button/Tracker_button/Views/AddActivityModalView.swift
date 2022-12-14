@@ -16,22 +16,23 @@ struct AddActivityModalView: View {
     ]
     
     var body: some View {
-        VStack{
-            Text("Select activity")
-                .foregroundColor(Color("AppColor2"))
+        VStack(alignment: .center){
+            Text("What to do?")
+                .foregroundColor(.black)
                 .font(.largeTitle)
-                .fontWeight(.semibold)
-            ScrollView(.horizontal) {
+                .fontWeight(.bold)
+            HStack {
                 LazyHGrid(rows: rows, alignment: .center, spacing: 25){
                     ForEach (userActivities, id: \.self) { activity in Image(systemName: activity)
                             .resizable()
-                            .frame(width: 45, height: 48)
+                            .aspectRatio(contentMode: .fit)
+                            .frame(width: 40, height: 40)
                             .foregroundColor(.white)
                             .padding()
                             .background(
                                 Circle()
-                                    .frame(width: 85.0, height: 85.0)
-                                    .foregroundColor(Color("AppColor"))
+                                    .frame(width: 70.0, height: 70.0)
+                                    .foregroundColor(.pink)
                             )
                     }
                 }
@@ -40,14 +41,15 @@ struct AddActivityModalView: View {
             Button{
                 
             } label:{
-                Text("Share Activity")
+                Text("Done")
                     .foregroundColor(.white)
                     .font(.title)
                     .fontWeight(.semibold)
                     .background(
-                    RoundedRectangle(cornerRadius: 60)
-                        .foregroundColor(Color("AppColor2"))
-                        .frame(width: 240, height: 50)
+                        RoundedRectangle(cornerRadius: 40)
+                            .frame(width: 100.0, height: 60.0)
+                            .foregroundColor(.black)
+                        
                     )
             }
         }
