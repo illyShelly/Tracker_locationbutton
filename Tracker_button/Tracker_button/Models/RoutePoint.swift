@@ -9,7 +9,7 @@ import Foundation
 import MapKit
 
 struct RoutePoint: Identifiable {
-    let id = UUID()
+    var id = UUID()
     let lat: Double
     let lon: Double
     

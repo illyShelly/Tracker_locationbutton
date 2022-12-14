@@ -15,7 +15,7 @@ struct ContentView: View {
     var body: some View {
         NavigationView {
             MapView()
-            //             .ignoresSafeArea(.all)
+                      .ignoresSafeArea(.all)
         
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
@@ -23,6 +23,11 @@ struct ContentView: View {
                         // add user with ....
                     }, label: {
                         Image(systemName: "plus")
+                            .foregroundColor(Color.white)
+                            .padding(10.0)
+                            .background(Color.red)
+                            .clipShape(/*@START_MENU_TOKEN@*/Circle()/*@END_MENU_TOKEN@*/)
+                                
                     })
                 }
                 ToolbarItem(placement: .bottomBar) {
