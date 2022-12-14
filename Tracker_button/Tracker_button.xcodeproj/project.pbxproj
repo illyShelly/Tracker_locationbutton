@@ -66,9 +66,9 @@
 			children = (
 				37D1FF132946823800C9FCA3 /* Tracker-button-Info.plist */,
 				37D1FF03294681E000C9FCA3 /* Tracker_buttonApp.swift */,
-				E760B2AD2949D0EC00643386 /* ViewModels */,
 				37EC55B12947E8A000A3CDEB /* Extentions */,
 				37D1FF112946822200C9FCA3 /* Models */,
+				E760B2AD2949D0EC00643386 /* ViewModels */,
 				37D1FF122946822B00C9FCA3 /* Views */,
 				37D1FF07294681E200C9FCA3 /* Assets.xcassets */,
 				37D1FF09294681E200C9FCA3 /* Preview Content */,
