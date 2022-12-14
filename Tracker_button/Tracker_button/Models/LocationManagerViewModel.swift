@@ -12,14 +12,15 @@ import MapKit
 class LocationManagerViewModel: NSObject, ObservableObject {
     @Published var status: CLAuthorizationStatus
     @Published var lastLocation: CLLocation?    // CLLocation vs CLLocationCoordinate2D
+    @Published var walkingArr: [CLLocation]?
     
     @Published var region = MKCoordinateRegion( // instantiate with default location when permission denied
-        center: CLLocationCoordinate2D(latitude: 51.505554, longitude: -0.075278), // White House US -> 38.8981, -77.0343
+        center: CLLocationCoordinate2D(latitude: 51.505554, longitude: -0.075278), // US -> 38.8981, -77.0343
         span: MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01)
     )
     
     //var distanceFilter: CLLocationDistance = 20.0 // min distance to move horizontally
-    let CLLocationDistanceMax: CLLocationDistance = 5.0 // A distance in meters from an existing location.
+    let CLLocationDistanceMax: CLLocationDistance = 1.0 // A distance in meters from an existing location.
     
     // Will set up and handle what we need in order to get the user’s coordinates.
     private let locationManager = CLLocationManager() // Instantiate var of type CLLocationManager,
@@ -45,7 +46,7 @@ class LocationManagerViewModel: NSObject, ObservableObject {
         switch status {
             case .authorizedWhenInUse:
                 // The best option - map display
-                self.locationManager.startUpdatingLocation()
+//                self.locationManager.startUpdatingLocation()
                 break
             case .denied:
                 // We cannot pop-up another permission -> instruct user go to General Settings
@@ -75,6 +76,7 @@ extension LocationManagerViewModel: CLLocationManagerDelegate {
 //    }
     
     func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {
+        print("location manager authorization status changed")
         self.status = manager.authorizationStatus
     }
     
@@ -86,9 +88,15 @@ extension LocationManagerViewModel: CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         guard let location = locations.last else { return } // access to the last location
             self.lastLocation = location
+        self.walkingArr = locations
         let center = CLLocationCoordinate2D(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude )
-        region = MKCoordinateRegion(center: center, span: MKCoordinateSpan(latitudeDelta: 0.003, longitudeDelta: 0.003)
+        region = MKCoordinateRegion(center: center, span: MKCoordinateSpan(latitudeDelta: 0.001, longitudeDelta: 0.001)
         )
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+        print("Error occured")
+        print(error)
     }
     
     

@@ -13,21 +13,39 @@ struct MapView: View {
     //    Pull out the object from main - where is initialized
     @EnvironmentObject private var manager: LocationManagerViewModel
     
-//    @StateObject private var locationManager = LocationManager()
+    //    @StateObject private var locationManager = LocationManager()
     @State var tracking: MapUserTrackingMode = .follow
+    
     
     var body: some View {
         VStack {
-    // MapInteractionModes - .pan or .zoom or allow both .all
-    // showsUserLocation - show a marker
+            // MapInteractionModes - .pan or .zoom or allow both .all
+            // showsUserLocation - show a marker
+            //    Set as optional - default lat, lon from LocationVM region showing London
+            
             Map(coordinateRegion: $manager.region,
-                interactionModes: .all,
-                showsUserLocation: true,
-                userTrackingMode: $tracking
+                interactionModes: MapInteractionModes.all,
+//                  showsUserLocation: true,
+                  userTrackingMode: $tracking,
+                annotationItems: [RoutePoint(lat: manager.lastLocation?.coordinate.latitude ?? manager.region.center.latitude, lon: manager.lastLocation?.coordinate.longitude ?? manager.region.center.latitude)], annotationContent: {
+                MapAnnotation(coordinate: $0.coor, content: {
+                    ZStack {
+                        Circle()
+                            .stroke(Color.gray, lineWidth: 3.0)
+                            .frame (width: 42, height: 42)
+                        
+                        Image(systemName: "theatermasks.circle.fill")
+                            .font(.system(size: 40, weight: .thin))
+                    }
+                        .foregroundColor(.pink)
+                })
+//                MapMarker(coordinate: $0.coor)
+            }
             )
         }
     }
 }
+//Initializer 'init(coordinateRegion:interactionModes:showsUserLocation:userTrackingMode:annotationItems:annotationContent:)' requires that 'CLLocation' conform to 'RandomAccessCollection'
 
 struct Map_Previews: PreviewProvider {
     static var previews: some View {
