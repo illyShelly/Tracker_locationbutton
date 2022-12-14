@@ -18,7 +18,6 @@ struct AddActivityModalView: View {
     var body: some View {
         VStack(alignment: .center){
             Text("What to do?")
-                .foregroundColor(.black)
                 .font(.largeTitle)
                 .fontWeight(.bold)
             HStack {
@@ -42,13 +41,13 @@ struct AddActivityModalView: View {
                 
             } label:{
                 Text("Done")
-                    .foregroundColor(.white)
-                    .font(.title)
+                    .font(.title2)
                     .fontWeight(.semibold)
+                    .foregroundColor(Color.black)
                     .background(
                         RoundedRectangle(cornerRadius: 40)
                             .frame(width: 100.0, height: 60.0)
-                            .foregroundColor(.black)
+                            .foregroundColor(.gray)
                         
                     )
             }
