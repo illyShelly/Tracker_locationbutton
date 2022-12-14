@@ -12,6 +12,8 @@ import MapKit
 struct ContentView: View {
     @EnvironmentObject private var vm: LocationManagerViewModel
     
+    @State var showModal = false
+    
     var body: some View {
         NavigationView {
             MapView()
@@ -20,12 +22,12 @@ struct ContentView: View {
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
                     Button(action: {
-                        // add user with ....
+                        showModal.toggle()
                     }, label: {
                         Image(systemName: "plus")
-                            .foregroundColor(Color.white)
+                            .foregroundColor(.white)
                             .padding(10.0)
-                            .background(Color.pink)
+                            .background(.pink)
                             .clipShape(/*@START_MENU_TOKEN@*/Circle()/*@END_MENU_TOKEN@*/)
                                 
                     })
@@ -43,8 +45,12 @@ struct ContentView: View {
                             .tint(.pink)
                             .padding(.top, 10)
                     }
-                }
+                } 
             }// toolbar
+        }
+        .sheet(isPresented: $showModal){
+            AddActivityModalView()
+                .presentationDetents([.medium])
         }
     }
 }
