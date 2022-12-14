@@ -15,6 +15,7 @@
 		37D1FF172946931100C9FCA3 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D1FF162946931100C9FCA3 /* MapView.swift */; };
 		37EC55B02947875C00A3CDEB /* RoutePoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37EC55AF2947875C00A3CDEB /* RoutePoint.swift */; };
 		37EC55B32947E8D300A3CDEB /* MKCoordinateRegion+Extentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37EC55B22947E8D300A3CDEB /* MKCoordinateRegion+Extentions.swift */; };
+		549DD75A294A0B2A00848EAA /* AddActivityModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 549DD759294A0B2A00848EAA /* AddActivityModalView.swift */; };
 		E760B2A829491E3D00643386 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E760B2A729491E3D00643386 /* UserModel.swift */; };
 		E760B2AC2949D03400643386 /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E760B2AB2949D03400643386 /* UserViewModel.swift */; };
 /* End PBXBuildFile section */
@@ -30,6 +31,7 @@
 		37D1FF162946931100C9FCA3 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		37EC55AF2947875C00A3CDEB /* RoutePoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutePoint.swift; sourceTree = "<group>"; };
 		37EC55B22947E8D300A3CDEB /* MKCoordinateRegion+Extentions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MKCoordinateRegion+Extentions.swift"; sourceTree = "<group>"; };
+		549DD759294A0B2A00848EAA /* AddActivityModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddActivityModalView.swift; sourceTree = "<group>"; };
 		E760B2A729491E3D00643386 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		E760B2AB2949D03400643386 /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -98,6 +100,7 @@
 			isa = PBXGroup;
 			children = (
 				37D1FF05294681E000C9FCA3 /* ContentView.swift */,
+				549DD759294A0B2A00848EAA /* AddActivityModalView.swift */,
 				37D1FF162946931100C9FCA3 /* MapView.swift */,
 			);
 			path = Views;
@@ -194,6 +197,7 @@
 				E760B2A829491E3D00643386 /* UserModel.swift in Sources */,
 				37EC55B02947875C00A3CDEB /* RoutePoint.swift in Sources */,
 				37D1FF04294681E000C9FCA3 /* Tracker_buttonApp.swift in Sources */,
+				549DD75A294A0B2A00848EAA /* AddActivityModalView.swift in Sources */,
 				37D1FF172946931100C9FCA3 /* MapView.swift in Sources */,
 				37EC55B32947E8D300A3CDEB /* MKCoordinateRegion+Extentions.swift in Sources */,
 				37D1FF152946830600C9FCA3 /* LocationManagerViewModel.swift in Sources */,
