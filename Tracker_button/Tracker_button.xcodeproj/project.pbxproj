@@ -14,7 +14,8 @@
 		37D1FF152946830600C9FCA3 /* LocationManagerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D1FF142946830600C9FCA3 /* LocationManagerViewModel.swift */; };
 		37D1FF172946931100C9FCA3 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D1FF162946931100C9FCA3 /* MapView.swift */; };
 		37EC55B02947875C00A3CDEB /* RoutePoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37EC55AF2947875C00A3CDEB /* RoutePoint.swift */; };
-		37EC55B32947E8D300A3CDEB /* MKCoordinateRegion+Extentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37EC55B22947E8D300A3CDEB /* MKCoordinateRegion+Extentions.swift */; };
+		37EC55B5294A2D7800A3CDEB /* RoutePointVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37EC55B4294A2D7800A3CDEB /* RoutePointVM.swift */; };
+		37EC55B7294A2F4A00A3CDEB /* MapRouteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37EC55B6294A2F4A00A3CDEB /* MapRouteView.swift */; };
 		E760B2A829491E3D00643386 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E760B2A729491E3D00643386 /* UserModel.swift */; };
 		E760B2AC2949D03400643386 /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E760B2AB2949D03400643386 /* UserViewModel.swift */; };
 /* End PBXBuildFile section */
@@ -29,7 +30,8 @@
 		37D1FF142946830600C9FCA3 /* LocationManagerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManagerViewModel.swift; sourceTree = "<group>"; };
 		37D1FF162946931100C9FCA3 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		37EC55AF2947875C00A3CDEB /* RoutePoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutePoint.swift; sourceTree = "<group>"; };
-		37EC55B22947E8D300A3CDEB /* MKCoordinateRegion+Extentions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MKCoordinateRegion+Extentions.swift"; sourceTree = "<group>"; };
+		37EC55B4294A2D7800A3CDEB /* RoutePointVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutePointVM.swift; sourceTree = "<group>"; };
+		37EC55B6294A2F4A00A3CDEB /* MapRouteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapRouteView.swift; sourceTree = "<group>"; };
 		E760B2A729491E3D00643386 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		E760B2AB2949D03400643386 /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -66,7 +68,6 @@
 			children = (
 				37D1FF132946823800C9FCA3 /* Tracker-button-Info.plist */,
 				37D1FF03294681E000C9FCA3 /* Tracker_buttonApp.swift */,
-				37EC55B12947E8A000A3CDEB /* Extentions */,
 				37D1FF112946822200C9FCA3 /* Models */,
 				E760B2AD2949D0EC00643386 /* ViewModels */,
 				37D1FF122946822B00C9FCA3 /* Views */,
@@ -99,22 +100,16 @@
 			children = (
 				37D1FF05294681E000C9FCA3 /* ContentView.swift */,
 				37D1FF162946931100C9FCA3 /* MapView.swift */,
+				37EC55B6294A2F4A00A3CDEB /* MapRouteView.swift */,
 			);
 			path = Views;
-			sourceTree = "<group>";
-		};
-		37EC55B12947E8A000A3CDEB /* Extentions */ = {
-			isa = PBXGroup;
-			children = (
-				37EC55B22947E8D300A3CDEB /* MKCoordinateRegion+Extentions.swift */,
-			);
-			path = Extentions;
 			sourceTree = "<group>";
 		};
 		E760B2AD2949D0EC00643386 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
 				E760B2AB2949D03400643386 /* UserViewModel.swift */,
+				37EC55B4294A2D7800A3CDEB /* RoutePointVM.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -190,12 +185,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				37D1FF06294681E000C9FCA3 /* ContentView.swift in Sources */,
+				37EC55B5294A2D7800A3CDEB /* RoutePointVM.swift in Sources */,
 				E760B2AC2949D03400643386 /* UserViewModel.swift in Sources */,
 				E760B2A829491E3D00643386 /* UserModel.swift in Sources */,
+				37EC55B7294A2F4A00A3CDEB /* MapRouteView.swift in Sources */,
 				37EC55B02947875C00A3CDEB /* RoutePoint.swift in Sources */,
 				37D1FF04294681E000C9FCA3 /* Tracker_buttonApp.swift in Sources */,
 				37D1FF172946931100C9FCA3 /* MapView.swift in Sources */,
-				37EC55B32947E8D300A3CDEB /* MKCoordinateRegion+Extentions.swift in Sources */,
 				37D1FF152946830600C9FCA3 /* LocationManagerViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
