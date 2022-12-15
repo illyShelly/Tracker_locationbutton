@@ -90,7 +90,7 @@ extension LocationManagerViewModel: CLLocationManagerDelegate {
             self.lastLocation = location
         self.walkingArr = locations
         let center = CLLocationCoordinate2D(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude )
-        region = MKCoordinateRegion(center: center, span: MKCoordinateSpan(latitudeDelta: 0.001, longitudeDelta: 0.001)
+        region = MKCoordinateRegion(center: center, span: MKCoordinateSpan(latitudeDelta: 0.003, longitudeDelta: 0.003)
         )
     }
     
