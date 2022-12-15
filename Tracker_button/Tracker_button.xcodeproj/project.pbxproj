@@ -99,7 +99,6 @@
 			isa = PBXGroup;
 			children = (
 				37D1FF05294681E000C9FCA3 /* ContentView.swift */,
-				549DD759294A0B2A00848EAA /* AddActivityModalView.swift */,
 				37D1FF162946931100C9FCA3 /* MapView.swift */,
 				37EC55B6294A2F4A00A3CDEB /* MapRouteView.swift */,
 			);
@@ -192,7 +191,6 @@
 				37EC55B7294A2F4A00A3CDEB /* MapRouteView.swift in Sources */,
 				37EC55B02947875C00A3CDEB /* RoutePoint.swift in Sources */,
 				37D1FF04294681E000C9FCA3 /* Tracker_buttonApp.swift in Sources */,
-				549DD75A294A0B2A00848EAA /* AddActivityModalView.swift in Sources */,
 				37D1FF172946931100C9FCA3 /* MapView.swift in Sources */,
 				37D1FF152946830600C9FCA3 /* LocationManagerViewModel.swift in Sources */,
 			);
@@ -320,14 +318,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Tracker_button/Preview Content\"";
-				DEVELOPMENT_TEAM = 3L9A6TRLK6;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Tracker-button-Info.plist";
-				INFOPLIST_KEY_CFBundleDisplayName = "";
+				INFOPLIST_KEY_CFBundleDisplayName = "Tracker-button";
 				INFOPLIST_KEY_LSApplicationCategoryType = "";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "The App needs permission to provide service";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -341,8 +339,9 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.Adri.Tracker-button";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.illyshelly.Tracker-button";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -354,14 +353,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Tracker_button/Preview Content\"";
-				DEVELOPMENT_TEAM = 3L9A6TRLK6;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Tracker-button-Info.plist";
-				INFOPLIST_KEY_CFBundleDisplayName = "";
+				INFOPLIST_KEY_CFBundleDisplayName = "Tracker-button";
 				INFOPLIST_KEY_LSApplicationCategoryType = "";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "The App needs permission to provide service";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -375,8 +374,9 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.Adri.Tracker-button";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.illyshelly.Tracker-button";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

@@ -45,7 +45,6 @@ struct MapView: View {
         }
     }
 }
-//Initializer 'init(coordinateRegion:interactionModes:showsUserLocation:userTrackingMode:annotationItems:annotationContent:)' requires that 'CLLocation' conform to 'RandomAccessCollection'
 
 struct Map_Previews: PreviewProvider {
     static var previews: some View {
