@@ -48,10 +48,10 @@ struct ContentView: View {
                 } 
             }// toolbar
         }
-        .sheet(isPresented: $showModal){
-            AddActivityModalView()
-                .presentationDetents([.medium])
-        }
+//        .sheet(isPresented: $showModal){
+//            AddActivityModalView()
+//                .presentationDetents([.medium])
+//        }
     }
 }
 struct ContentView_Previews: PreviewProvider {
