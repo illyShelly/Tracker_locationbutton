@@ -16,28 +16,28 @@ struct AddActivityModalView: View {
     ]
     
     var body: some View {
-        VStack(alignment: .center){
+        VStack(alignment: .center) {
             Text("What to do?")
                 .font(.largeTitle)
                 .fontWeight(.bold)
             HStack {
-                LazyHGrid(rows: rows, alignment: .center, spacing: 25){
+                LazyHGrid(rows: rows, alignment: .center, spacing: 15) {
                     ForEach (userActivities, id: \.self) { activity in Image(systemName: activity)
                             .resizable()
                             .aspectRatio(contentMode: .fit)
-                            .frame(width: 40, height: 40)
+                            .frame(width: 38, height: 38)
                             .foregroundColor(.white)
                             .padding()
                             .background(
                                 Circle()
-                                    .frame(width: 70.0, height: 70.0)
+                                    .frame(width: 65.0, height: 65.0)
                                     .foregroundColor(.pink)
                             )
                     }
                 }
-                .padding()
+              //  .padding()
             }
-            Button{
+            Button {
                 
             } label:{
                 Text("Done")
@@ -50,7 +50,7 @@ struct AddActivityModalView: View {
                             .foregroundColor(.gray)
                         
                     )
-            }
+            } .padding(.top, 20)
         }
     }
 }

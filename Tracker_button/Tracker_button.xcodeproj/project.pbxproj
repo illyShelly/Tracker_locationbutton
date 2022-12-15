@@ -325,7 +325,8 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Tracker-button-Info.plist";
-				INFOPLIST_KEY_CFBundleDisplayName = "Tracker-button";
+
+				INFOPLIST_KEY_CFBundleDisplayName = Wattodo;
 				INFOPLIST_KEY_LSApplicationCategoryType = "";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "The App needs permission to provide service";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -360,7 +361,9 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Tracker-button-Info.plist";
-				INFOPLIST_KEY_CFBundleDisplayName = "Tracker-button";
+
+				INFOPLIST_KEY_CFBundleDisplayName = Wattodo;
+
 				INFOPLIST_KEY_LSApplicationCategoryType = "";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "The App needs permission to provide service";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;

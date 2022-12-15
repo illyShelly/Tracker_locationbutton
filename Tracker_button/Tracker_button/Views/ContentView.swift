@@ -26,7 +26,7 @@ struct ContentView: View {
                     }, label: {
                         Image(systemName: "plus")
                             .foregroundColor(.white)
-                            .padding(10.0)
+                            .padding(8.0)
                             .background(.pink)
                             .clipShape(/*@START_MENU_TOKEN@*/Circle()/*@END_MENU_TOKEN@*/)
                                 
