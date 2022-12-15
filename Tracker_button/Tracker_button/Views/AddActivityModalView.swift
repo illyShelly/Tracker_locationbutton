@@ -43,7 +43,7 @@ struct AddActivityModalView: View {
                 Text("Done")
                     .font(.title2)
                     .fontWeight(.semibold)
-                    .foregroundColor(Color.black)
+                    .foregroundColor(Color.white)
                     .background(
                         RoundedRectangle(cornerRadius: 40)
                             .frame(width: 100.0, height: 60.0)
