@@ -27,7 +27,7 @@ struct MapView: View {
                 interactionModes: MapInteractionModes.all,
 //                  showsUserLocation: true,
                   userTrackingMode: $tracking,
-                annotationItems: [RoutePoint(lat: manager.lastLocation?.coordinate.latitude ?? manager.region.center.latitude, lon: manager.lastLocation?.coordinate.longitude ?? manager.region.center.latitude)], annotationContent: {
+                annotationItems: [RoutePoint(lat: manager.lastLocation?.coordinate.latitude ?? manager.region.center.latitude, lon: manager.lastLocation?.coordinate.longitude ?? manager.region.center.latitude)],  annotationContent: {
                 MapAnnotation(coordinate: $0.coor, content: {
                     ZStack {
                         Circle()
