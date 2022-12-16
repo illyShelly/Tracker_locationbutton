@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		376F7085294CA7190093926C /* AddActivityModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 376F7084294CA7190093926C /* AddActivityModalView.swift */; };
 		37D1FF04294681E000C9FCA3 /* Tracker_buttonApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D1FF03294681E000C9FCA3 /* Tracker_buttonApp.swift */; };
 		37D1FF06294681E000C9FCA3 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D1FF05294681E000C9FCA3 /* ContentView.swift */; };
 		37D1FF08294681E200C9FCA3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 37D1FF07294681E200C9FCA3 /* Assets.xcassets */; };
@@ -21,6 +22,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		376F7084294CA7190093926C /* AddActivityModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddActivityModalView.swift; sourceTree = "<group>"; };
 		37D1FF00294681E000C9FCA3 /* Tracker_button.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tracker_button.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		37D1FF03294681E000C9FCA3 /* Tracker_buttonApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tracker_buttonApp.swift; sourceTree = "<group>"; };
 		37D1FF05294681E000C9FCA3 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -99,6 +101,7 @@
 			isa = PBXGroup;
 			children = (
 				37D1FF05294681E000C9FCA3 /* ContentView.swift */,
+				376F7084294CA7190093926C /* AddActivityModalView.swift */,
 				37D1FF162946931100C9FCA3 /* MapView.swift */,
 				37EC55B6294A2F4A00A3CDEB /* MapRouteView.swift */,
 			);
@@ -184,6 +187,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				376F7085294CA7190093926C /* AddActivityModalView.swift in Sources */,
 				37D1FF06294681E000C9FCA3 /* ContentView.swift in Sources */,
 				37EC55B5294A2D7800A3CDEB /* RoutePointVM.swift in Sources */,
 				E760B2AC2949D03400643386 /* UserViewModel.swift in Sources */,
@@ -318,14 +322,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Manual;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Tracker_button/Preview Content\"";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 4S4D574GC3;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Tracker-button-Info.plist";
-
 				INFOPLIST_KEY_CFBundleDisplayName = Wattodo;
 				INFOPLIST_KEY_LSApplicationCategoryType = "";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "The App needs permission to provide service";
@@ -354,16 +358,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Manual;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Tracker_button/Preview Content\"";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 4S4D574GC3;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Tracker-button-Info.plist";
-
 				INFOPLIST_KEY_CFBundleDisplayName = Wattodo;
-
 				INFOPLIST_KEY_LSApplicationCategoryType = "";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "The App needs permission to provide service";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;

@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct AddActivityModalView: View {
-    var userActivities = ["figure.run", "cart", "pawprint.fill", "party.popper", "bicycle", "film.fill", "bubble.left.and.bubble.right.fill", "building.columns.fill"]
+    var userActivities = ["figure.run", "cart", "pawprint.fill", "party.popper", "bicycle", "film.fill", "bubble.left.and.bubble.right.fill", "theatermasks.fill"]
     
     let rows = [
         GridItem(.fixed(90)),
