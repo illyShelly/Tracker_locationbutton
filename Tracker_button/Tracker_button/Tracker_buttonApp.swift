@@ -9,12 +9,12 @@ import SwiftUI
 
 @main
 struct Tracker_buttonApp: App {
-    @StateObject private var vm = LocationManagerViewModel()
+//    @StateObject private var vm = LocationManagerViewModel()
 
     var body: some Scene {
         WindowGroup {
             ContentView()
-                .environmentObject(vm)
+//                .environmentObject(vm)
         }
     }
 }

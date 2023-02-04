@@ -8,49 +8,54 @@
 import SwiftUI
 
 struct AddActivityModalView: View {
+    
     var userActivities = ["figure.run", "cart", "pawprint.fill", "party.popper", "bicycle", "film.fill", "bubble.left.and.bubble.right.fill", "theatermasks.fill"]
     
-    let rows = [
+    let col = [
+        GridItem(.fixed(90)),
+        GridItem(.fixed(90)),
         GridItem(.fixed(90)),
         GridItem(.fixed(90))
     ]
     
     var body: some View {
         VStack(alignment: .center) {
-            Text("What to do?")
+            Text("Choose your activity?")
                 .font(.largeTitle)
                 .fontWeight(.bold)
+            
+//          Activity icons aligned Vertially
             HStack {
-                LazyHGrid(rows: rows, alignment: .center, spacing: 15) {
+                LazyVGrid(columns: col, alignment: .center, spacing: 15) {
                     ForEach (userActivities, id: \.self) { activity in Image(systemName: activity)
                             .resizable()
                             .aspectRatio(contentMode: .fit)
-                            .frame(width: 38, height: 38)
+                            .frame(width: 30, height: 30)
                             .foregroundColor(.white)
-                            .padding()
+                            .padding(.vertical, 20)
                             .background(
                                 Circle()
-                                    .frame(width: 65.0, height: 65.0)
+                                    .frame(width: 63.0, height: 63.0)
                                     .foregroundColor(.pink)
                             )
                     }
                 }
-              //  .padding()
+                .padding(.top, 30)
+                .padding(.bottom, 40)
             }
             Button {
                 
             } label:{
-                Text("Done")
+                Text("Search")
+                    .frame(width: 200, height: 50)
                     .font(.title2)
                     .fontWeight(.semibold)
                     .foregroundColor(Color.white)
                     .background(
-                        RoundedRectangle(cornerRadius: 40)
-                            .frame(width: 100.0, height: 60.0)
-                            .foregroundColor(.gray)
-                        
+                        RoundedRectangle(cornerRadius: 30)
+                            .foregroundColor(.mint)
                     )
-            } .padding(.top, 20)
+            }
         }
     }
 }

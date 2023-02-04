@@ -11,7 +11,8 @@ import Combine
 
 struct MapView: View {
     //    Pull out the object from main - where is initialized
-    @EnvironmentObject private var manager: LocationManagerViewModel
+//    @EnvironmentObject private var manager: LocationManagerViewModel
+    @ObservedObject var manager: LocationManagerViewModel
     
     //    @StateObject private var locationManager = LocationManager()
     @State var tracking: MapUserTrackingMode = .follow
@@ -48,8 +49,8 @@ struct MapView: View {
 
 struct Map_Previews: PreviewProvider {
     static var previews: some View {
-        MapView()
-            .environmentObject(LocationManagerViewModel())
+        MapView(manager: LocationManagerViewModel()) // cannot be private otherwise doesn't work
+//            .environmentObject(LocationManagerViewModel())
     }
 }
 

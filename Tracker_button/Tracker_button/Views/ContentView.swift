@@ -10,13 +10,13 @@ import CoreLocationUI
 import MapKit
 
 struct ContentView: View {
-    @EnvironmentObject private var vm: LocationManagerViewModel
     
+    @StateObject private var vm = LocationManagerViewModel()
     @State var showModal = false
     
     var body: some View {
         NavigationView {
-            MapView()
+            MapView(manager: vm)
                       .ignoresSafeArea(.all)
         
             .toolbar {

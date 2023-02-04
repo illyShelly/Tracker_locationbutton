@@ -16,7 +16,7 @@ class RoutePointVM: ObservableObject {
         if manager.walkingArr != [] {
             
             for point in manager.walkingArr! {
-                var pin = RoutePoint(lat: point.coordinate.latitude, lon: point.coordinate.longitude)
+                let pin = RoutePoint(lat: point.coordinate.latitude, lon: point.coordinate.longitude)
                 points.append(pin)
             }
         }
